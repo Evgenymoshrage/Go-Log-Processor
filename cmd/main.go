@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"final/internal/model"
-	"final/internal/processor"
+	"github.com/Evgenymoshrage/final/internal/model"
+	"github.com/Evgenymoshrage/final/internal/processor"
 )
 
 func main() {

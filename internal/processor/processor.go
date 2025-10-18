@@ -7,7 +7,7 @@ import (
 	"strconv"      // Для преобразования строк в числа
 	"time"
 
-	"final/internal/model" // Импортируем структуры LogEntry и Statistics из пакета internal/model
+	"github.com/Evgenymoshrage/final/internal/model" // Импортируем структуры LogEntry и Statistics из пакета internal/model
 )
 
 // LoadLogs читает CSV-файл и возвращает срез структур LogEntry
