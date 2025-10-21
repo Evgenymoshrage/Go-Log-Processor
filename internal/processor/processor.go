@@ -13,7 +13,8 @@ import (
 	"sync" // Для синхронизации горутин (WaitGroup)
 	"time" // Для работы с датой и временем
 
-	"github.com/Evgenymoshrage/Go-Log-Processor/internal/model" // Импортируем структуры LogEntry и Statistics из пакета internal/model
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/model"   // Импортируем структуры LogEntry и Statistics из пакета internal/model
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/utilits" // Импортируем вспомогательные функции internal/utilits
 )
 
 // ================================================  Загрузка логов ================================================
@@ -98,7 +99,7 @@ func ProcessLogs(ctx context.Context, input <-chan model.LogEntry, numWorkers in
 				default: // Продолжаем обработку, если отмены нет
 					start := time.Now()
 					fmt.Printf("[%s] Воркер %d начал обработку: %s\n",
-						start.Format("2006-01-02 15:04:05"), workerID, logEntry)
+						start.Format("2006-01-02 15:04:05"), workerID, utilits.LogEntryToString(logEntry))
 
 					// Имитация обработки
 					time.Sleep(time.Millisecond * 10)
@@ -107,7 +108,7 @@ func ProcessLogs(ctx context.Context, input <-chan model.LogEntry, numWorkers in
 
 					end := time.Now()
 					fmt.Printf("[%s] Воркер %d закончил обработку: %s\n",
-						end.Format("2006-01-02 15:04:05"), workerID, logEntry)
+						end.Format("2006-01-02 15:04:05"), workerID, utilits.LogEntryToString(logEntry))
 
 					// Отправляем результат в выходной канал
 					select {
