@@ -2,15 +2,18 @@
 
 package model
 
-import "sync" // для защиты данных от одновременного доступа (mutex)
+import (
+	"sync" // Для защиты данных от одновременного доступа (mutex)
+	"time" // Для работы с датой и временем
+)
 
 type LogEntry struct {
-	Timestamp    string // время в формате "2024-01-15 10:30:00"
-	IP           string // IP адрес клиента
-	Method       string // HTTP метод (GET, POST и т.д.)
-	URL          string // путь запроса
-	StatusCode   int    // HTTP статус код
-	ResponseTime int    // время ответа в миллисекундах
+	Timestamp    time.Time // время в формате "2024-01-15 10:30:00"
+	IP           string    // IP адрес клиента
+	Method       string    // HTTP метод (GET, POST и т.д.)
+	URL          string    // путь запроса
+	StatusCode   int       // HTTP статус код
+	ResponseTime int       // время ответа в миллисекундах
 }
 
 type Statistics struct {
