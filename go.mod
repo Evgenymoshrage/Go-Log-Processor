@@ -1,3 +1,3 @@
-module github.com/Evgenymoshrage/final
+module github.com/Evgenymoshrage/Go-Log-Processor
 
 go 1.24.4

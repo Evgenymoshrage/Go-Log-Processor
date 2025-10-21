@@ -5,7 +5,7 @@ import (
 	"strings"      // Для работы со строками - Repeat
 	"unicode/utf8" // Чтобы корректно считать количество символов в UTF-8
 
-	"github.com/Evgenymoshrage/final/internal/model"
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/model"
 )
 
 // ================================================ Реализует интерфейс fmt.Stringer для красивого вывода ================================================

@@ -6,9 +6,9 @@ import (
 	"log"     // Для логирования сообщений
 	"time"    // Для работы с датой и временем
 
-	"github.com/Evgenymoshrage/final/internal/model"
-	"github.com/Evgenymoshrage/final/internal/processor"
-	"github.com/Evgenymoshrage/final/internal/utilits"
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/model"
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/processor"
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/utilits"
 )
 
 func main() {

@@ -13,7 +13,7 @@ import (
 	"sync" // Для синхронизации горутин (WaitGroup)
 	"time" // Для работы с датой и временем
 
-	"github.com/Evgenymoshrage/final/internal/model" // Импортируем структуры LogEntry и Statistics из пакета internal/model
+	"github.com/Evgenymoshrage/Go-Log-Processor/internal/model" // Импортируем структуры LogEntry и Statistics из пакета internal/model
 )
 
 // ================================================  Загрузка логов ================================================
