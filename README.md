@@ -128,14 +128,14 @@ Go 1.22+
 Для обеспечения корректной работы всех функций проекта написаны тесты в пакете processor.
 
 Покрытие тестами
-
 ```
-```bash
-LoadLogs — проверка корректного чтения CSV и создания структур LogEntry.
-ProcessLogs — проверка параллельной обработки, обновления статистики и работы с каналами.
-FilterLogs — проверка фильтрации логов по HTTP-кодам (2xx / 4xx / 5xx).
-SummaryStatistics — проверка формирования сводной статистики по запросам и IP.
 
+```bash
+Пакет	Тесты	Проверяют
+processor	TestLoadLogs, TestProcessLogs, TestFilterLogs, TestSummaryStatistics	Корректность чтения CSV, параллельную обработку, фильтрацию логов и подсчёт статистики
+utilits	TestLogEntryToString	Форматирование структуры LogEntry в человекочитаемую строку
+model	—	Определяет структуры данных (LogEntry, Statistics)
+cmd	—	Точка входа, не тестируется напрямую
 ```
 
 Запуск тестов
@@ -153,14 +153,17 @@ go test -race ./...
 ```
 
 Пример успешного вывода:
-```bash
-ok      github.com/Evgenymoshrage/Go-Log-Processor/internal/processor   0.285s
-?       github.com/Evgenymoshrage/Go-Log-Processor/cmd  [no test files]
-?       github.com/Evgenymoshrage/Go-Log-Processor/internal/model       [no test files]
-?       github.com/Evgenymoshrage/Go-Log-Processor/internal/utilits     [no test files]
-```
+
+```text
+=== RUN   TestLogEntryToString
+--- PASS: TestLogEntryToString (0.00s)
+ok  	github.com/Evgenymoshrage/Go-Log-Processor/internal/utilits	0.002s
+?   	github.com/Evgenymoshrage/Go-Log-Processor/cmd	        [no test files]
+?   	github.com/Evgenymoshrage/Go-Log-Processor/internal/model	[no test files]
+ok  	github.com/Evgenymoshrage/Go-Log-Processor/internal/processor	0.300s
 
 Тесты используют временные CSV-файлы и проверяют корректность обработки логов, подсчёта статистики и фильтрации каналов.
+```
 
 ### 👨‍💻 Автор
 
